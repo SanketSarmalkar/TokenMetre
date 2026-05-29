@@ -2,6 +2,7 @@
   "name": "token-metre",
   "displayName": "TokenMetre",
   "description": "Token usage, cost estimation, and session analytics for Claude Code",
+  "publisher": "vidyudanulaboratories",
   "version": "0.0.1",
   "icon": "media/icon.png",
   "engines": { "vscode": "^1.85.0" },
@@ -70,5 +71,9 @@
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.85.0",
     "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SanketSarmalkar/TokenMetre.git"
   }
 }
