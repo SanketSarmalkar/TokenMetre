@@ -1,0 +1,74 @@
+{
+  "name": "token-metre",
+  "displayName": "TokenMetre",
+  "description": "Token usage, cost estimation, and session analytics for Claude Code",
+  "version": "0.0.1",
+  "icon": "media/icon.png",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "claudeTokens",
+          "title": "TokenMetre",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "claudeTokens": [
+        {
+          "id": "claudeTokens.sessions",
+          "name": "Sessions"
+        },
+        {
+          "id": "claudeTokens.aggregates",
+          "name": "Token Usage"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "claudeTokens.refresh",
+        "title": "Refresh Sessions",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "claudeTokens.openSession",
+        "title": "Open Session Report"
+      },
+      {
+        "command": "claudeTokens.openPeriod",
+        "title": "Open Period Report",
+        "icon": "$(graph)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "claudeTokens.refresh",
+          "when": "view == claudeTokens.sessions",
+          "group": "navigation"
+        },
+        {
+          "command": "claudeTokens.refresh",
+          "when": "view == claudeTokens.aggregates",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}

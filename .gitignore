@@ -1,0 +1,25 @@
+# Compiled output
+out/
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.vsix
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.vscode/.ropeproject
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
